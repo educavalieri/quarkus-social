@@ -2,7 +2,6 @@ package com.educavalieri.rest;
 
 
 import com.educavalieri.dtos.PostDto;
-import com.educavalieri.entities.Post;
 import com.educavalieri.services.PostService;
 
 import javax.inject.Inject;
@@ -15,6 +14,7 @@ import java.util.List;
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class PostResource {
+
 
     @Inject
     private PostService postService;

@@ -14,7 +14,8 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(schema = "quarkus-social", name = "user")
+//@Table(schema = "quarkus-social", name = "user")
+@Table(name = "user")
 public class User {
 
     @Id

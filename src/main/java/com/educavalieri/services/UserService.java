@@ -19,6 +19,7 @@ public class UserService {
     @Inject
     private UserRepository userRepository;
 
+    @Transactional
     public CreateUserDto save(CreateUserDto userDto){
         User user = new User();
         user.setAge(userDto.getAge());
@@ -27,12 +28,14 @@ public class UserService {
         return userDto;
     }
 
+    @Transactional
     public List<UserDto> findAll() {
         PanacheQuery<User> users = userRepository.findAll();
         List<UserDto> dtos = users.stream().map(x -> new UserDto(x.getId(), x.getName(), x.getAge())).collect(Collectors.toList());
         return dtos;
     }
 
+    @Transactional
     public UserDto findById(Long id){
         User entity = null;
         try {
@@ -47,6 +50,7 @@ public class UserService {
         return userDto;
     }
 
+    @Transactional
     public void delete(Long id){
         try {
             User user = userRepository.findById(id);

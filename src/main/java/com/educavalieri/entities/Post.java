@@ -11,7 +11,8 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(schema = "quarkus-social", name = "post")
+//@Table(schema = "quarkus-social", name = "post")
+@Table(name = "post")
 public class Post {
 
     @Column(name = "id")
