@@ -21,6 +21,9 @@ public class UserService {
 
     @Transactional
     public CreateUserDto save(CreateUserDto userDto){
+        if(userDto.getName() == null){
+            throw new NullPointerException("user cant be null");
+        }
         User user = new User();
         user.setAge(userDto.getAge());
         user.setName(userDto.getName());
